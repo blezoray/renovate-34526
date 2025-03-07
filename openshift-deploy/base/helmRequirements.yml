@@ -1,0 +1,14 @@
+vector:
+  repo: "https://helm.vector.dev"
+  chart: "vector"
+  version: "0.38.0"
+  values: helmValues/vector.yaml
+  historyMax: 2
+
+loki:
+  repo: "https://grafana.github.io/helm-charts"
+  chart: "loki"
+  version: "6.10.0"
+  values: helmValues/loki.yaml
+  historyMax: 2
+

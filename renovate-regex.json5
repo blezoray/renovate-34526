@@ -10,14 +10,16 @@
   "customManagers": [
     {
       "description": "helmRequirements file",
-      "customType": "jsonata",
+      "customType": "regex",
       "fileMatch": [
         "openshift-deploy/.*/helmRequirements\\.y[a]*ml$"
       ],
-      "fileFormat": "yaml",
-      "matchStringsStrategy": "recursive",
+      "matchStringsStrategy": "combination",
       "matchStrings": [
-        "*.{\"depName\": chart, \"currentValue\": version, \"registryUrl\": repo}"
+        "^(?<helmRelease>.+?):\\s+\\n",
+        "version:\\s+(?<currentValue>.*?)\\n",
+        "repo:\\s+(?<registryUrl>.*?)\\n",
+        "chart:\\s+(?<depName>.*?)\\n"
       ],
       "datasourceTemplate": "helm",
       "versioningTemplate": "semver"
