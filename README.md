@@ -89,19 +89,7 @@ Finally, I found the good configuration that works fine:
 Traces:
 
 ```shell
-LICENSE                 README.md               renovate-jsonata.json5  
-  main S:1  ~/localfs/github/bruno/renovate-34526                                                                        14:54:56  bruno 
- 130 ❯ docker run
-"docker run" requires at least 1 argument.
-See 'docker run --help'.
-
-Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
-
-Create and run a new container from an image
-  main S:1  ~/localfs/github/bruno/renovate-34526                                                                        14:55:08  bruno 
- 1 ❯ set -o vi
-  main S:1  ~/localfs/github/bruno/renovate-34526                                                                        14:55:10  bruno 
-❯ docker run --rm -v "${PWD}:/usr/src/app" -e LOG_LEVEL=debug renovate/renovate --platform=local --repository-cache=reset 
+$ docker run --rm -v "${PWD}:/usr/src/app" -e LOG_LEVEL=debug renovate/renovate --platform=local --repository-cache=reset 
 DEBUG: Using RE2 regex engine
 DEBUG: Parsing configs
 DEBUG: No config file found on disk - skipping
