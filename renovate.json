@@ -17,7 +17,7 @@
       "fileFormat": "yaml",
       "matchStringsStrategy": "recursive",
       "matchStrings": [
-        "*.{\"depName\": chart, \"currentValue\": version, \"registryUrl\": repo}"
+        "$each(*, function($v, $n) { { 'depName': $v.chart, 'currentValue': $v.version, 'registryUrl': $v.repo } })"
       ],
       "datasourceTemplate": "helm",
       "versioningTemplate": "semver"
